@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 copyright = 'Copyright@Lin Yong Xiang 10612150'
-def plotFigure(f, title, istart, iend):
-    x = np.linspace(istart, iend, 100)
+def plotFigure(f, title, istart, iend, xy):
+    x = np.linspace(istart, iend, 200)
     y = f(x)
-    plt.plot (x, y)
+    plt.plot(x, y)
     plt.xlabel('x')
     plt.ylabel('y')
     plt.title('{}'.format(title))
-    plt.text(0, 0, copyright)
+    plt.text(xy[0], xy[1], copyright)
     plt.show()
 
 def fa(x): return (x - 1) / x
@@ -20,11 +20,11 @@ def fc(x): return -x * np.cos(x) + x
 def fd(x): return np.cos(x) * np.sin(x) + np.cos(x)
 def fe(x): return np.tan(x) - x - 1
 
-plotFigure(fa, 'IVP A solve: (x - 1) / x', 0, 1)
-plotFigure(fb, 'IVP A solve: sin((x ** 2) / 2)', 0, 2 * np.pi)
-plotFigure(fc, 'IVP A solve: -x * cos(x) + x', 0, 8 * np.pi)
-plotFigure(fd, 'IVP A solve: cos(x) * sin(x) + cos(x)', 0, 4 * np.pi)
-plotFigure(fe, 'IVP A solve: tan(x) - x - 1', 0, 4 * np.pi)
+plotFigure(fa, 'IVP A solve: (x - 1) / x', 0, 1, (0.2, -200))
+plotFigure(fb, 'IVP A solve: sin((x ** 2) / 2)', 0, 2 * np.pi, (0, -0.75))
+plotFigure(fc, 'IVP A solve: -x * cos(x) + x', 0, 8 * np.pi, (0, 0))
+plotFigure(fd, 'IVP A solve: cos(x) * sin(x) + cos(x)', 0, 4 * np.pi, (0, -1))
+plotFigure(fe, 'IVP A solve: tan(x) - x - 1', 0, 4 * np.pi, (0, -100))
 
 print('checks')
 x = symbols('x')
