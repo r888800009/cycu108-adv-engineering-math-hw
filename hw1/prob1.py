@@ -32,6 +32,8 @@ def plotBoth(f2, title, xy):
     plt.text(xy[0], xy[1], copyright.copyright)
     plt.show()
 
+# a
+
 # b
 def taylorB(x):
     f = lambdify(symbols('x'), genTaylor(2), 'numpy')
